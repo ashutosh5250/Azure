@@ -1,0 +1,23 @@
+   <h2>Two Way Binding</h2>
+<input type="text" [(ngModel)]="num"/>
+<h2>{{num}}</h2>
+<h2>{{num*num}}</h2>
+<h2>Event Binding</h2>
+<table>
+   <tr>
+      <td>Number 1:</td>
+      <td><input type="number" [(ngModel)]="num1"/></td>
+   </tr>
+   <tr>
+      <td>Number 2:</td>
+      <td><input type="number" [(ngModel)]="num2"/></td>
+   </tr>
+   <tr>
+      <td><button (click)="Addititon(num1,num2)">Add</button></td>
+   </tr>
+</table>
+<h2>Result = {{result}}</h2>
+<h2>Atribute Binding</h2>
+ <button [disabled]="val" (click)="changeval()">Disebal</button>
+ 
+

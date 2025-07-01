@@ -1,0 +1,23 @@
+<table>
+   <tr>
+      <td>
+         <div> Roll No</div>
+      </td>
+      <td>
+         <input type="number" [(ngModel)]="Rno"/>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <div> Name</div>
+      </td>
+      <td>
+         <input type="text" [(ngModel)]="Name"/>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <button (click)="AddData(Rno,Name)">Submit</button>
+      </td>
+   </tr>
+</table>

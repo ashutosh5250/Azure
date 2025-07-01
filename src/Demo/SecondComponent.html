@@ -1,0 +1,22 @@
+<h1>Second Component</h1>
+    <h2>Wellcome</h2>
+    <h2>Roll no = {{rno}}</h2>
+    <h2>name = {{name}}</h2>
+    <h2>{{Data[2]}}</h2>
+    <ul *ngFor="let d of Data">
+        <li>{{d}}</li>
+    </ul>
+    <table border="1">
+       <thead>
+         <tr>
+            <th>Roll Number</th>
+            <th>Student Name</th>
+         </tr>
+       </thead>
+       <tbody *ngFor="let s of Student">
+           <tr>
+            <td>{{s.rno}}</td>
+            <td>{{s.name}}</td>
+           </tr>
+       </tbody>
+    </table>

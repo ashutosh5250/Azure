@@ -1,0 +1,81 @@
+<div class="container">
+   <h1 class="heading">Student Form</h1>
+   <table class="tbl">
+      <tr>
+         <td>Roll No</td>
+         <td><input type="number" [(ngModel)]="Rno"/></td>
+      </tr>
+      <tr>
+         <td>Student Name</td>
+         <td><input type="text" [(ngModel)]="Name"/></td>
+      </tr>
+      <tr>
+         <td>English</td>
+         <td><input type="number" [(ngModel)]="English" (keyup)="calculation(English,Hindi,Maths)"/></td>
+      </tr>
+      <tr>
+         <td>Hindi</td>
+         <td><input type="number" [(ngModel)]="Hindi" (keyup)="calculation(English,Hindi,Maths)"/></td>
+      </tr>
+      <tr>
+         <td>Maths</td>
+         <td><input type="number" [(ngModel)]="Maths" (keyup)="calculation(English,Hindi,Maths)"/></td>
+      </tr>
+      <tr>
+         <td>Total</td>
+         <td><input type="number" [(ngModel)]="Total" [readOnly]="true"/></td>
+      </tr>
+      <tr>
+         <td>Percentage</td>
+         <td><input type="number" [(ngModel)]="Percentage" [readOnly]="true"/></td>
+      </tr>
+      <tr>
+         <td>Result</td>
+         <td><input type="text" [(ngModel)]="Result" [readOnly]="true"/></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+         <button (click)="AddStudent(Rno,Name,English,Hindi,Maths,Total,Percentage,Result)" [hidden]="SubState">Submit</button>
+        &nbsp;
+        <button (click)="UpdateStudent(Rno,Name,English,Hindi,Maths,Total,Percentage,Result)" [hidden]="UpState">Update</button>
+        &nbsp;
+        <button (click)="ClearData()">Clear</button>
+      </td>
+      </tr>
+   </table>
+   <hr/>
+   <table border="5">
+    <thead>
+      <tr>
+         <th>Roll No</th>
+         <th>Student Name</th>
+         <th>Hindi</th>
+         <th>English</th>
+         <th>Maths</th>
+         <th>Total</th>
+         <th>Percentage</th>
+         <th>Result</th>
+         <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of StudantData ; let i=index">
+        <td>{{s.RollNo}}</td>
+        <td>{{s.Name}}</td>
+        <td>{{s.Hindi}}</td>
+        <td>{{s.English}}</td>
+        <td>{{s.Maths}}</td>
+        <td>{{s.Total}}</td>
+        <td>{{s.Percentage}}</td>
+        <td>{{s.Result}}</td>
+        <td>
+            <button (click)="ViewData(s,i)">View</button>
+            &nbsp;
+            <button (click)="Delete(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+   </table>
+
+</div>
+
